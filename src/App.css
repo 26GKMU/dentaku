@@ -1,0 +1,59 @@
+
+
+.cDisplayArea{
+  position: relative;
+  width: 400px;
+  height: 160px;
+  background-color: #61dafb;
+  font-size: 30px;
+}
+.cMainDisplay{
+  width:380px;
+  height:150px;
+  top: 0; bottom: 0; left: 0; right: 0;
+  margin:auto;
+  position: absolute;
+  overflow-wrap: break-word;
+  background-color: aquamarine;
+  line-height: 1em;
+}
+.cErrorMessage{
+  position: absolute;
+  bottom: 5px; right:15px;
+  background-color:transparent;
+  text-align:right;
+  font-size: 20px;
+}
+
+button:active {
+  transition: transform 0.1s ease, filter 0.1s ease;
+  filter: brightness(75%);
+  transform: scale(0.94)
+}
+
+.cButtonArea{
+  display: flex;
+  width: 400px;
+  height: 375px;
+  background-color: gray;
+  font-size: 0;
+}
+
+.cNumButtonArea{
+  display: block;
+  width: 300px;
+  height: 375px;
+}
+.cFunctionButtonArea{
+  display: block;
+  width: 100px;
+  height: 375px;
+}
+button,.spacer{
+  width: 100px;
+  height: 75px;
+  border: 1px solid #61dafb;
+  padding: 0;
+  margin: 0;
+  font-size: 16px
+}
