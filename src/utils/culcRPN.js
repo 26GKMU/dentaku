@@ -1,5 +1,10 @@
-export const toToken = (formula) => formula.match(/(\d+\.?\d*|\+|\-|\*|\/|\(|\))/g);
-
+  export const toToken = (formula) => {
+    let token = formula.match(/(\d+\.?\d*|\+|\-|\*|\/|\(|\))/g);
+    if(token && token[0]==="-" && token.length > 1){
+      token = [token[0]+token[1],...token.slice(2)];
+    }
+    return token;
+  }
 export const toRPN = (tokens) => {
   const output = [];
   const stack = [];

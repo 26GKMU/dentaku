@@ -1,10 +1,12 @@
 
-
+.cFrame{
+  display: inline-flex;
+}
 .cDisplayArea{
   position: relative;
   width: 400px;
   height: 160px;
-  background-color: #61dafb;
+  background-color: #20deee;
   font-size: 30px;
 }
 .cMainDisplay{
@@ -14,7 +16,7 @@
   margin:auto;
   position: absolute;
   overflow-wrap: break-word;
-  background-color: aquamarine;
+  background-color: #bee8ff;
   line-height: 1em;
 }
 .cErrorMessage{
@@ -52,8 +54,35 @@ button:active {
 button,.spacer{
   width: 100px;
   height: 75px;
-  border: 1px solid #61dafb;
+  border: 1px solid #20deee;
   padding: 0;
   margin: 0;
   font-size: 16px
+}
+
+.cHistory{
+  width: 360px;
+  height: auto;
+  border: 1px solid #20deee;
+  border-left: none;
+  padding: 12px;
+}
+ul{
+  margin: 4px 0;
+  padding-left:12px;
+}
+li{
+  position: relative;
+  list-style: none;
+  font-size:20px;
+  height: 30px;
+  border-bottom: 1px solid rgba(25,25,250,0.1);
+}
+.min-button{
+  margin-left: 10px;
+  width:20px;
+  height: 20px;
+  top:5px;
+  right:4px;
+  position: absolute;
 }
