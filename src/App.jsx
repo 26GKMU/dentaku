@@ -1,6 +1,7 @@
 import './App.css';
 import {useState} from "react" ;
 import Display from "./components/Display";
+import Button from "./components/Button";
 import ButtonPanel from "./components/ButtonPanel";
 import History from "./components/History";
 import {BUTTONS} from "./constants/buttons";
@@ -10,6 +11,7 @@ function App() {
 
   const [display,setDisplay] = useState("0");
   const [history,setHistroy] = useState([]);
+  const [showHistory,setShowHistory] = useState(false);
   const [errorMessage, setErrorMessage] =useState("");
   const [isDecimal, setIsDecimal] = useState(false);
   const [isLastBlockNotZero, setIsLastBlockNotZero] = useState(false);
@@ -19,6 +21,7 @@ function App() {
   const isLastCharOperator = () => BUTTONS.OPERATOR.includes(getLastChar());
 
   const handleButtonClick = (value) => handlers[value]?.();
+  const toggleShowHistory = () => setShowHistory(!showHistory);
   const onclickNum = (value) => {
     if(isAfterCulc){
       value === "("
@@ -111,9 +114,12 @@ function App() {
         <Display display={display} error={errorMessage} />
         <ButtonPanel onButtonClick={handleButtonClick}/>
       </div>
-      <div className='cHistory'>
+      <div className={showHistory ? "cHistory": "cHistory hidden"}>
         <History history={history} delHistory={delHistory}/>
       </div>
+      <button className="display-button" onClick={toggleShowHistory}>
+        ﾘﾚｷ<div class={showHistory ? "reverse": ""}>≪</div>
+      </button>
     </div>
   );
 }

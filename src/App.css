@@ -1,6 +1,7 @@
 
 .cFrame{
   display: inline-flex;
+  overflow:hidden;
 }
 .cDisplayArea{
   position: relative;
@@ -60,7 +61,7 @@ button,.spacer{
   font-size: 16px
 }
 
-.cHistory{
+.cHistory {
   width: 360px;
   height: auto;
   border: 1px solid #20deee;
@@ -80,9 +81,83 @@ li{
 }
 .min-button{
   margin-left: 10px;
-  width:20px;
-  height: 20px;
-  top:5px;
+  width:28px;
+  height:28px;
+  top:1px;
   right:4px;
   position: absolute;
+  border-radius:4px;  
+}
+.display-button{
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .cFrame{
+    width: 100vw;
+    height: 100vh;
+    background-color: #20deee;
+  }
+  .cDisplayArea{
+    width: 99vw;
+    height: 28%;
+    margin:0 0.5vw;
+  }
+  .cMainDisplay{
+    width:95%;
+    height:90%;
+  }
+  .cButtonArea{
+    width: 99vw;
+    height: 100%;
+    margin:0 0.5vw;
+  }
+  .cNumButtonArea{
+    width: 75%;
+    height: auto;
+  }
+  .cFunctionButtonArea{
+    width: 25%;
+    height: auto;
+  }
+  .cNumButtonArea button{
+    width: 33.333%;
+    height: 14.4%;
+  }
+  .cFunctionButtonArea button{
+    width: 100%;
+    height:14.4%;
+  }
+  .cHistory{
+    left:0;
+    top:0;
+    width: 95vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 2;
+    transition: transform 0.4s 0s linear;
+    background-color: aliceblue;
+  }
+  .hidden{
+    transition: transform 0.3s 0s linear;
+    transform: translateX(100vw);
+  }
+  .min-button{
+    right:48px;
+  }
+  .display-button{
+    right:0;
+    top: 25px;
+    width:40px;
+    height:60px;
+    display:block;
+    position: fixed;
+    z-index: 3;
+    transition: transform 0.3s 0s linear;
+    border-radius: 25% 0 0 25%;
+  }
+  .reverse{
+    transition: transform 0.1s 0.3s linear;
+    transform: rotateY(180deg);
+  }
 }
