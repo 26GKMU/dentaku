@@ -1,7 +1,6 @@
 import './App.css';
 import {useState} from "react" ;
 import Display from "./components/Display";
-import Button from "./components/Button";
 import ButtonPanel from "./components/ButtonPanel";
 import History from "./components/History";
 import {BUTTONS} from "./constants/buttons";
