@@ -56,9 +56,11 @@ function App() {
     if(value==="C"){
       setDisplay("0");
     }else{
-      setDisplay(
-        prev => isLastCharOperator() ? prev.slice(0,-1) + value : prev + value
-      );
+      if(getLastChar()!=="("){
+        setDisplay(
+          prev => isLastCharOperator() ? prev.slice(0,-1) + value : prev + value
+        );
+      }
     }
     setIsDecimal(false);
     setIsLastBlockNotZero(false);

@@ -1,5 +1,5 @@
   export const toToken = (formula) => {
-    let token = formula.match(/(\d+\.?\d*|\+|\-|\*|\/|\(|\))/g);
+    let token = formula.match(/(\d+\.?\d*|[+\-*/()])/g);
     if(token && token[0]==="-" && token.length > 1){
       token = [token[0]+token[1],...token.slice(2)];
     }
