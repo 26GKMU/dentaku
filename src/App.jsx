@@ -29,7 +29,7 @@ function App() {
       setIsAfterCulc(false);
     }
     if (value === "(") {
-      if (!isLastCharOperator() && getLastChar() !== "("){ 
+      if (!isLastCharOperator() && getLastChar() !== "("){
         if (display !== "0" || (getLastChar() !== "0" && !isLastBlockNotZero))return;
       }
     }
@@ -73,7 +73,7 @@ function App() {
       setErrorMessage("括弧の数が合いません");
       return;
     }
-    
+
     try {
       const tokens = toToken(display);
       const rpn = toRPN(tokens);
@@ -81,7 +81,7 @@ function App() {
 
       const result = evalRPN(rpn);
       if ( Number.isNaN(result) || !isFinite(result)) throw new Error("計算ができません");
-      history.length <16 
+      history.length <16
         ? setHistroy([...history,(display+"="+result)])
         : setHistroy([...history.slice(1),(display+"="+result)]);
       setDisplay(result.toString());
@@ -119,7 +119,7 @@ function App() {
         <History history={history} delHistory={delHistory}/>
       </div>
       <button className="display-button" onClick={toggleShowHistory}>
-        ﾘﾚｷ<div class={showHistory ? "reverse": ""}>≪</div>
+        ﾘﾚｷ<div className={showHistory ? "reverse": ""}>≪</div>
       </button>
     </div>
   );

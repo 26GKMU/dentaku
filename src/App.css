@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "TRS Million";
+  src: url("TRS-Million\ Rg.otf") format("opentype");
+  font-style: normal;
+  font-weight: normal;
+}
 
 .cFrame{
   display: inline-flex;
@@ -8,7 +14,8 @@
   width: 400px;
   height: 160px;
   background-color: #20deee;
-  font-size: 30px;
+  font-family: "TRS Million", Helvetica, sans-serif ;
+  font-size: 36px;
 }
 .cMainDisplay{
   width:380px;
@@ -86,7 +93,7 @@ li{
   top:1px;
   right:4px;
   position: absolute;
-  border-radius:4px;  
+  border-radius:4px;
 }
 .display-button{
   display: none;
